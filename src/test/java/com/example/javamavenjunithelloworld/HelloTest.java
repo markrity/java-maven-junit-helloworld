@@ -31,6 +31,17 @@ public class HelloTest {
 
         assertThat(os.toString(), is(equalTo(String.format("%s%s", Hello.HELLO, System.lineSeparator()))));
     }
+    
+    @Test
+    public void testSayHelloFail() {
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream stream = new PrintStream(os, true);
+    
+        Hello hi = new Hello();
+        hi.sayHello(stream);
+    
+        assertThat(os.toString(), is(equalTo(String.format("%s%s", Hello.BAD_HELLO, System.lineSeparator()))));
+    }
 
     @Test
     public void testSayHelloAFewTimes() {
