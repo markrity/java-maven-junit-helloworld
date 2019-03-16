@@ -4,7 +4,7 @@ pipeline {
     stage('Git') {
       // Get some code from a GitHub repository
       steps{
-          git 'https://github.com/markrity/java-maven-junit-helloworld.git'
+          checkout scm
       }
    }
    stage('Build'){
