@@ -23,6 +23,7 @@ pipeline {
           }
     }
      stage('Results') {
+     //Publish results
        steps{
       junit '**/target/surefire-reports/TEST-*.xml'
       step( [ $class: 'JacocoPublisher' ] )
